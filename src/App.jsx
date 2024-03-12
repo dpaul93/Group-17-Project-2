@@ -1,9 +1,16 @@
 import { useState } from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './components/Home'
 import './App.css'
 
 function App() {
-
-  return
+  return (
+    <Router >
+      <Routes>
+        <Route path ="/*" element={<Home />} />
+      </Routes>
+    </Router>
+  )
 
 }
 
