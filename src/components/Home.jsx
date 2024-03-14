@@ -1,7 +1,6 @@
 import React from 'react';
-import "../styles/Home.css"
-import GoogleSignInButton from './googleLogin'
-import { GoogleLogin } from '@react-oauth/google';
+import "../styles/Home.css";
+import GoogleSignInButton from './googleLogin';
 
 function Home() {
     return (

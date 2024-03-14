@@ -1,5 +1,6 @@
 import React from 'react'
 import { GoogleLogin } from '@react-oauth/google';
+import { jwtDecode } from 'jwt-decode';
 
 const GoogleSignInButton = () => {
     return (
@@ -7,7 +8,8 @@ const GoogleSignInButton = () => {
             clientId="648522219346-je2qct38or9hpotv7fpnmrfmbv016e5p.apps.googleusercontent.com"
             buttonText="Sign in with Google"
             onSuccess={credentialResponse => {
-                console.log(credentialResponse);
+                const credentialResponseDecoded = jwtDecode(credentialResponse.credential);
+                console.log(credentialResponseDecoded)
             }}
             onError={() => {
                 console.log("Login Failed.")
