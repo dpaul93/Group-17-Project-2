@@ -7,17 +7,21 @@ const ChatBody = ({ conversationId }) => {
     const { selectedUserId } = useContext(SelectedUserContext);
     const [conversations, setConversations] = useState({});
 
-};
-
 const conversation = conversations[selectedUserId] || [];  
-return (
-    <div className='message__box'>
-        <div>
-
-        </div> 
-    </div>
-  )
+    return (
+        <>
+        <div className="message__container">
+            {conversation.map((msg, index) => (
+            <div key={index} className={`message__chats ${msg.sender === 'You' ? 'message__sender' : 'message__recipient'}`}>
+                <p className="sender__name">{msg.sender}</p>
+                <p>{msg.message}</p>
+            </div>
+            ))}
+            
+        </div>
+        </>
+            );
   
-
+};
 
 export default ChatBody;
