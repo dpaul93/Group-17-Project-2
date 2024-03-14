@@ -5,7 +5,7 @@ import { jwtDecode } from 'jwt-decode';
 const GoogleSignInButton = () => {
     return (
         <GoogleLogin
-            clientId="648522219346-je2qct38or9hpotv7fpnmrfmbv016e5p.apps.googleusercontent.com"
+            clientId={"648522219346-je2qct38or9hpotv7fpnmrfmbv016e5p.apps.googleusercontent.com"}
             buttonText="Sign in with Google"
             onSuccess={credentialResponse => {
                 const credentialResponseDecoded = jwtDecode(credentialResponse.credential);
