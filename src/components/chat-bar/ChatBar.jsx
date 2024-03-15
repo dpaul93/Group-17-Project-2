@@ -1,8 +1,8 @@
 import React from 'react';
 //import logo from "../../image/Logo.png"
-import contactsList from "../chat-page/contactsList"
-import ChatBarLogo from "../chat-page/ChatLogo"
-import ChatBarProfile from "../chat-page/ChatProfile"
+import contactsList from "./contactsList"
+import ChatBarLogo from "./ChatLogo"
+import ChatBarProfile from "./ChatProfile"
 
 export default function ChatBar(){
     console.log("Place1",contactsList);
