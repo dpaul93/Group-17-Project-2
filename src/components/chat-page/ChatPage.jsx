@@ -1,7 +1,7 @@
 import React from "react";
 import ChatBar from "../chat-bar/ChatBar";
-import ChatBody from "./ChatBody";
-import ChatFooter from "./ChatFooter";
+import ChatBody from "..chat-body/ChatBody";
+import ChatFooter from "../chat-footer/ChatFooter";
 
 const ChatPage = ({ socket }) => {
   return (
