@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ChatFooter = ({ socket }) => {
+const ChatFooter = () => {
   const [message, setMessage] = useState('');
 
   const handleSendMessage = (e) => {
@@ -15,26 +15,20 @@ const ChatFooter = ({ socket }) => {
     }
     setMessage('');
   };
-  return <div className="chat__footer">...</div>;
+  return (
+    <div className="chat__footer">
+      <form className="form" onSubmit={handleSendMessage}>
+        <input
+          type="text"
+          placeholder="Write message"
+          className="message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
+        <button className="sendBtn">SEND</button>
+      </form>
+    </div>
+  );
 };
 
 export default ChatFooter;
-
-// import React from 'react';
-// import ChatBar from './ChatBar';
-// import ChatBody from './ChatBody';
-// import ChatFooter from './ChatFooter';
-
-// const ChatPage = ({ socket }) => {
-//   return (
-//     <div className="chat">
-//       <ChatBar />
-//       <div className="chat__main">
-//         <ChatBody />
-//         <ChatFooter />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ChatPage;
