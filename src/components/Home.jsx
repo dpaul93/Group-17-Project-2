@@ -48,9 +48,8 @@ return (
                     <div classname="col-3 d-flex justify-content-center">
                         <img className="img-fluid" src={profile.picture} alt="user image" />
                     </div>
-                    <h3>User Logged in</h3>
-                    <p>Name: {profile.name}</p>
-                    <p>Email Address: {profile.email}</p>
+                    <h3 className="display-5">{profile.name}</h3>
+                    <p className="lead">{profile.email}</p>
                     <div className="row col-6 justify-content-between">
                         <div className=" mx-auto col-4">
                             <Link to="/Chat">
