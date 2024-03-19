@@ -21,7 +21,6 @@ function ChatBarProfile({ name, imgURL, LastMessage }){
                 <p className='fs-6'>{LastMessage}</p>
             </div>
         </div>
-       
     
         ); 
     
