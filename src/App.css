@@ -2,7 +2,7 @@
     --primary: #102542;
     --secondary: #f87060;
     --light: #f0ede4;
-    -dark: #191919;
+    --dark: #191919;
 }
 
 /* css styles for chat page */
@@ -11,7 +11,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Segoe UI', sans-serif;
   }
   .home__container {
     width: 100%;
@@ -30,17 +30,6 @@
   .username__input {
     padding: 10px;
     width: 50%;
-  }
-  .home__cta {
-    width: 200px;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #607eaa;
-    color: #f9f5eb;
-    outline: none;
-    border: none;
-    border-radius: 5px;
   }
   .chat {
     width: 100%;
@@ -79,16 +68,17 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    background-color: #f9f5eb;
+    background-color: var(--primary);
+    color: var(--light)
   }
   .leaveChat__btn {
     padding: 10px;
     width: 150px;
     border: none;
     outline: none;
-    background-color: #d1512d;
+    background-color: var(--secondary);
     cursor: pointer;
-    color: #eae3d2;
+    color: var(--light);
   }
   .message__container {
     width: 100%;
@@ -123,7 +113,7 @@
   }
   .sendBtn {
     width: 150px;
-    background-color: green;
+    background-color: var(--primary);
     padding: 10px;
     border: none;
     outline: none;
@@ -132,16 +122,17 @@
   }
   .sendBtn:hover {
     background-color: rgb(129, 201, 129);
+    color: var(--dark)
   }
   .message__recipient {
-    background-color: #f5ccc2;
+    background-color: var(--secondary);
     width: 300px;
     padding: 10px;
     border-radius: 10px;
     font-size: 15px;
   }
   .message__sender {
-    background-color: rgb(194, 243, 194);
+    background-color: var(--primary);
     max-width: 300px;
     padding: 10px;
     border-radius: 10px;
