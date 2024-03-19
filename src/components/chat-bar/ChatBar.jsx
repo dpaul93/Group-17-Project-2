@@ -1,25 +1,21 @@
 import React from 'react';
-//import logo from "../../image/Logo.png"
-import contactsList from "./contactsList"
-import ChatBarLogo from "./ChatLogo"
-import ChatBarProfile from "./ChatProfile"
 
-export default function ChatBar(){
-    console.log("Place1",contactsList);
-    return(
-        <div className="chatBar">
-            <ChatBarLogo />
-            <div className="container-md btn py-2 card position-fixed" style={{ width: '400px',height:'800px', padding: '10px', backgroundColor:'#495057' }} >
-            {contactsList.map(contact => (
-                <ChatBarProfile 
-                    key={contact.id}
-                    name={contact.name}
-                    imgURL={contact.imgURL}
-                    LastMessage={contact.LastMessage}
-                />
-            ))}
-            </div>
+const ChatBar = () => {
+  return (
+    <div className="chat__sidebar">
+      <h2>Open Chat</h2>
+
+      <div>
+        <h4 className="chat__header">ACTIVE USERS</h4>
+        <div className="chat__users">
+          <p>User 1</p>
+          <p>User 2</p>
+          <p>User 3</p>
+          <p>User 4</p>
         </div>
-    );
+      </div>
+    </div>
+  );
+};
 
-}
+export default ChatBar;
