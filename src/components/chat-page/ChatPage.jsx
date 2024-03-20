@@ -18,7 +18,7 @@ const ChatPage = ({ socket }) => {
     console.log("justSent-TypingResponse");
   }, [typingStatus])
 
-  // scroll function
+  // scroll function for chat page
 
   useEffect(() => {
     lastMessageRef.current?.scrollIntoView({behavior: 'smooth'});
