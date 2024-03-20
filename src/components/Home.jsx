@@ -118,6 +118,7 @@ import "../styles/Home.css";
 import axios from 'axios';
 import { useGoogleLogin, googleLogout } from '@react-oauth/google';
 import io from 'socket.io-client';
+import logo from '../image/yappa_logo.png'
 
 // Create a context to hold the socket instance
 const SocketContext = createContext();
@@ -189,18 +190,20 @@ function Home() {
                         </div>
                     </div>
                 ) : (
-                        <div className="header container-fluid">
-                            <div className="d-flex justify-content-center align-items-center h-100">
-                                <div className="row back py-5">
-                                    <h1 className="col-12 display-1 fw-bold dark text-center mb-3"> Yappa</h1>
-                                    <h5 className="col-12 dark text-center">Instant messaging for chatty people</h5>
-                                    <div className="col-12 d-flex justify-content-center mt-3">
-                                        <button className="btn btn-primary" onClick={() => login()}>Sign in with Google</button>
-                                    </div>
+                    <div className="header container-fluid">
+                        <div className="row d-flex justify-content-center align-items-center h-100">
+                            <div className="row col-6 back justify-content-center py-5">
+                                <div className="col-9 mb-3">
+                                    <img src={logo} className="img-fluid logo h-100" />
+                                </div>
+                                <h5 className="col-12 dark text-center">Instant messaging for chatty people</h5>
+                                <div className="col-12 d-flex justify-content-center mt-3">
+                                    <button className="btn btn-primary" onClick={() => login()}>Sign in with Google</button>
                                 </div>
                             </div>
                         </div>
-                    )}
+                    </div>
+                )}
             </div>
         </SocketContext.Provider>
     );
