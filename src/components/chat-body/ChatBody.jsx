@@ -25,7 +25,7 @@ import { useNavigate } from 'react-router-dom';
 
 // export default ChatBody;
 
-const ChatBody = ({messages, typingStatus, lastMessageRef}) => { 
+const ChatBody = ({messages, typingStatus, lastMessageRef, handleClick}) => { 
     const navigate = useNavigate()
     
   
@@ -43,7 +43,7 @@ const ChatBody = ({messages, typingStatus, lastMessageRef}) => {
           </header>
   
   
-          <div className='message__container'>
+          <div className='message__container' onClick={handleClick}>
             {messages.map(message => (
               message.name === localStorage.getItem("userName") ? (
                 <div className="message__chats" key={message.id}>
