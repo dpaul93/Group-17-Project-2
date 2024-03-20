@@ -11,7 +11,7 @@ const ChatPage = ({ socket }) => {
   useEffect(()=> {
     socket.on("messageResponse", data => setMessages([...messages, data]))
     console.log("justSent-MessageResponse");
-  }, [socket, messages])
+  }, [socket])
 
   useEffect(()=> {
     socket.on("typingResponse", data => setTypingStatus(data))
