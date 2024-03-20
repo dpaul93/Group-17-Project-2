@@ -41,8 +41,8 @@ app.get("/api", (req, res) => {
 });
 
    
-// http.listen(PORT, () => {
-//     console.log(`Server listening on ${PORT}`);
+http.listen(PORT, () => {
+    console.log(`Server listening on ${PORT}`);
 
-    socketIO.listen(process.env.PORT || 3000)
+    // socketIO.listen(process.env.PORT || 3000)
 });
