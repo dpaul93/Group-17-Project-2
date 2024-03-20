@@ -44,5 +44,5 @@ app.get("/api", (req, res) => {
 http.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
 
-    io.listen(process.env.PORT || 4000)
+    // socketIO.listen(process.env.PORT || 4000)
 });
