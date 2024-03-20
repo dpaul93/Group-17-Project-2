@@ -3,12 +3,11 @@ const app = express()
 const cors = require("cors")
 const http = require('http').Server(app)
 const PORT = process.env.PORT || 3000
-const socketIO = require('socket.io');
-// (http, {
-//     cors: {
-//       origin: "*"}
-//           // origin: "http://localhost:3000"}
-// });
+const socketIO = require('socket.io');(http, {
+    cors: {
+      origin: "*"}
+          // origin: "http://localhost:3000"}
+});
 
 app.use(cors())
 let users = []
@@ -41,8 +40,8 @@ app.get("/api", (req, res) => {
 });
 
 
-// http.listen(PORT, () => {
-//     console.log(`Server listening on ${PORT}`);
+http.listen(PORT, () => {
+    console.log(`Server listening on ${PORT}`);
 
     socketIO.listen(process.env.PORT || 3000);
-// });
+});
