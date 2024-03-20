@@ -152,7 +152,7 @@ function Home() {
     useEffect(() => {
         // Initialize socket when user profile is available
         if (profile.name) {
-            const newSocket = io('<your_socket_server_url>');
+            const newSocket = io('https://calm-scrubland-96218-01850c0a6077.herokuapp.com/');
             setSocket(newSocket);
 
             // Clean up socket connection on component unmount
