@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 4000
 const socketIO = require('socket.io')(http, {
     cors: {
       // origin: "https://calm-scrubland-96218-01850c0a6077.herokuapp.com/"
-        origin: "http://localhost:5174"
+        origin: "http://localhost:3000"
     }
 });
 
