@@ -11,14 +11,14 @@ const ChatPage = ({ socket }) => {
   useEffect(()=> {
     socket.on("messageResponse", data => setMessages([...messages, data]))
     console.log("justSent-MessageResponse");
-  }, [socket, messages])
+  }, [socket])
 
   useEffect(()=> {
     socket.on("typingResponse", data => setTypingStatus(data))
     console.log("justSent-TypingResponse");
   }, [typingStatus])
 
-  // scroll function
+  // scroll function for chat page
 
   useEffect(() => {
     lastMessageRef.current?.scrollIntoView({behavior: 'smooth'});
