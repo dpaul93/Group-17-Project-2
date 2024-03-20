@@ -10,10 +10,12 @@ const ChatPage = ({ socket }) => {
 
   useEffect(()=> {
     socket.on("messageResponse", data => setMessages([...messages, data]))
+    console.log("justSent-MessageResponse");
   }, [socket, messages])
 
   useEffect(()=> {
     socket.on("typingResponse", data => setTypingStatus(data))
+    console.log("justSent-TypingResponse");
   }, [socket])
 
   // scroll function
