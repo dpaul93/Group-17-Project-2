@@ -32,7 +32,7 @@ const ChatPage = ({ socket }) => {
     <div className="chat">
       <ChatBar socket={socket}/>
       <div className="chat__main" onClick={handleClick}>
-      <ChatBody messages={messages} typingStatus={typingStatus} lastMessageRef={lastMessageRef}/>
+      <ChatBody messages={messages} typingStatus={typingStatus} lastMessageRef={lastMessageRef} handleClick={handleClick}/>
         <ChatFooter socket={socket}/>
       </div>
     </div>
