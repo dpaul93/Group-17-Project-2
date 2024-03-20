@@ -17,13 +17,14 @@ import { useNavigate } from 'react-router-dom';
 //                 <p>{msg.message}</p>
 //             </div>
 //             ))}
-            
+
 //         </div>
 //         </>
 //             );
 // };
 
 // export default ChatBody;
+
 
 const ChatBody = ({messages, typingStatus, lastMessageRef, handleClick}) => { 
     const navigate = useNavigate()
@@ -47,28 +48,29 @@ const ChatBody = ({messages, typingStatus, lastMessageRef, handleClick}) => {
             {messages.map(message => (
               message.name === localStorage.getItem("userName") ? (
                 <div className="message__chats" key={message.id}>
+
               <p className='sender__name'>You</p>
               <div className='message__sender'>
-                  <p>{message.text}</p>
+                <p>{message.text}</p>
               </div>
             </div>
-              ): (
-                <div className="message__chats" key={message.id}>
+          ) : (
+            <div className="message__chats" key={message.id}>
               <p>{message.name}</p>
               <div className='message__recipient'>
-                  <p>{message.text}</p>
+                <p>{message.text}</p>
               </div>
             </div>
-              )
-              ))}
-  
-            <div className='message__status'>
-              <p>{typingStatus}</p>
-            </div>
-            <div ref={lastMessageRef} />   
-          </div>
-      </>
-    )
-  }
-  
-  export default ChatBody
+          )
+        ))}
+
+        <div className='message__status'>
+          <p>{typingStatus}</p>
+        </div>
+        <div ref={lastMessageRef} />
+      </div>
+    </>
+  )
+}
+
+export default ChatBody
