@@ -3,7 +3,7 @@ const app = express()
 const cors = require("cors")
 const http = require('http').Server(app)
 const PORT = process.env.PORT || 3000
-const socketIO = require('socket.io');(http, {
+const socket = require('socket.io');(http, {
     cors: {
       origin: "*"}
           // origin: "http://localhost:3000"}
@@ -12,10 +12,10 @@ const socketIO = require('socket.io');(http, {
 app.use(cors())
 let users = []
 
-socketIO.on('connection', (socket) => {
+socket.on('connection', (socket) => {
     console.log(`⚡: ${socket.id} user just connected!`)  
     socket.on("message", data => {
-      socketIO.emit("messageResponse", data)
+      socket.emit("messageResponse", data)
     })
 
     socket.on("typing", data => (
@@ -24,13 +24,13 @@ socketIO.on('connection', (socket) => {
 
     socket.on("newUser", data => {
       users.push(data)
-      socketIO.emit("newUserResponse", users)
+      socket.emit("newUserResponse", users)
     })
 
     socket.on('disconnect', () => {
       console.log('🔥: A user disconnected');
       users = users.filter(user => user.socketID !== socket.id)
-      socketIO.emit("newUserResponse", users)
+      socket.emit("newUserResponse", users)
       socket.disconnect()
     });
 });
@@ -43,5 +43,5 @@ app.get("/api", (req, res) => {
 http.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
 
-    socketIO.listen(process.env.PORT || 3000);
+    socket.listen(process.env.PORT || 3000);
 });
