@@ -40,8 +40,8 @@ app.get("/api", (req, res) => {
 });
 
 
-http.listen(PORT, () => {
+app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
 
-    socket.listen(process.env.PORT || 3000);
+    // socket.listen(process.env.PORT || 3000);
 });
