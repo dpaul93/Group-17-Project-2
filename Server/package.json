@@ -5,11 +5,12 @@
   "main": "index.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "npm start --prefix client",
     "start": "node index.js"
   },
   "keywords": [],
   "author": "",
-  "license": "MIT",
+  "license": "ISC",
   "dependencies": {
     "all": "^0.0.0",
     "cors": "^2.8.5",

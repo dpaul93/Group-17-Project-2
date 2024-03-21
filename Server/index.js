@@ -2,7 +2,7 @@ const express = require("express")
 const app = express()
 const cors = require("cors")
 const http = require('http').Server(app)
-const PORT = process.env.PORT || 3000
+// const PORT = process.env.PORT || 3000
 const socketIO = require('socket.io')(http, {
     cors: {
       origin: "*"}
@@ -47,8 +47,8 @@ app.get("/api", (req, res) => {
 });
 
 
-app.listen(PORT, () => {
-    console.log(`Server listening on ${PORT}`);
+app.listen(process.env.PORT || 3000, () => {
+    console.log("Server has started");
 
     // socketIO.listen(process.env.PORT || 3000);
 });
