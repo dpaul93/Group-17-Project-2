@@ -132,7 +132,7 @@ function Home() {
         onSuccess: (codeResponse) => setUser(codeResponse),
         onError: (error) => console.log('Login Failed:', error)
     });
-
+    // Function for logging in via Google
     useEffect(() => {
         if (user) {
             axios
@@ -168,6 +168,7 @@ function Home() {
     return (
         <SocketContext.Provider value={socket}>
             <div className="header container-fluid">
+                {/* If a profile is logged in, a limited profile for the user is shown rather than the main landing page */}
                 {profile.name ? (
                     <div className="d-flex justify-content-center align-items-center h-100">
                         <div className="row back py-5 text-center justify-content-center">
@@ -190,6 +191,7 @@ function Home() {
                         </div>
                     </div>
                 ) : (
+                    // If no profile is logged in, the main landing page for the site is shown, including the app logo and a button with a prompt to sign in via Google
                     <div className="header container-fluid">
                         <div className="row d-flex justify-content-center align-items-center h-100">
                             <div className="row col-6 back justify-content-center py-5">
