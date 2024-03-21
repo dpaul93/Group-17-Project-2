@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import ChatBar from "../chat-bar/ChatBar";
 import ChatBody from "../chat-body/ChatBody";
 import ChatFooter from "../chat-footer/ChatFooter";
+import socketIO from 'socket.io-client'
 
 const ChatPage = ({ socket }) => {
   const [messages, setMessages] = useState([])

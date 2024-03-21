@@ -29,7 +29,7 @@ const ChatBar = ({ socket }) => {
     socket.on("newUser", data => setUsers(data))
 
     useEffect(() => {
-        // socket.on("newUser", data => setUsers(data))
+        socket.on("newUser", data => setUsers(data))
     }, [socket, users])
     return (
         <div className='chat__sidebar text-center'>
